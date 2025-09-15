@@ -182,13 +182,13 @@
             margin: 0 auto;
             padding: 0 16px;
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
         }
         
         .hero-content h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             font-weight: 700;
             color: var(--gray-900);
             margin-bottom: 16px;
@@ -203,7 +203,7 @@
         }
         
         .hero-subtitle {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             color: var(--gray-600);
             margin-bottom: 24px;
             font-weight: 400;
@@ -211,7 +211,7 @@
         
         .hero-stats {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 16px;
             margin: 24px 0;
         }
@@ -233,7 +233,7 @@
         }
         
         .stat-number {
-            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-size: clamp(1.5rem, 4vw, 2rem);
             font-weight: 700;
             color: var(--primary-blue);
             display: block;
@@ -242,7 +242,7 @@
         
         .stat-label {
             color: var(--gray-600);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 500;
         }
         
@@ -257,11 +257,10 @@
         
         .lifecycle-diagram {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-            gap: 16px;
+            gap: 24px;
         }
         
         .lifecycle-phase {
@@ -288,39 +287,38 @@
             font-weight: 600;
             color: var(--gray-900);
             margin-bottom: 4px;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
         
         .phase-subtitle {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: var(--gray-600);
         }
         
         .lifecycle-arrow {
             color: var(--gray-400);
-            font-size: 1.2rem;
-            margin: 0 10px;
-            display: none;
+            font-size: 1.5rem;
+            margin: 0 16px;
         }
         
         /* Phase Content Styles */
         .phase-content {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
             margin-bottom: 40px;
         }
         
         .phase-info h3 {
-            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-size: clamp(1.8rem, 4vw, 2rem);
             font-weight: 700;
             color: var(--gray-900);
             margin-bottom: 16px;
         }
         
         .phase-description {
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
             color: var(--gray-600);
             margin-bottom: 24px;
             line-height: 1.7;
@@ -328,7 +326,7 @@
         
         .modules-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 24px;
         }
         
@@ -362,7 +360,7 @@
         }
         
         .module-title {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: var(--gray-900);
             margin-bottom: 10px;
@@ -372,7 +370,7 @@
             color: var(--gray-600);
             margin-bottom: 16px;
             line-height: 1.6;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
         
         .module-benefits {
@@ -385,7 +383,7 @@
             margin-bottom: 8px;
             padding-left: 20px;
             position: relative;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
         
         .module-benefits li::before {
@@ -412,7 +410,7 @@
         }
         
         .roi-value {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--gray-700);
         }
         
@@ -428,7 +426,7 @@
         /* Video Section */
         .video-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
             margin-top: 40px;
         }
@@ -450,7 +448,7 @@
             align-items: center;
             justify-content: center;
             color: var(--gray-600);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 12px;
             border: 2px dashed var(--gray-300);
             transition: all 0.3s ease;
@@ -470,7 +468,7 @@
         
         .video-description {
             color: var(--gray-600);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
         
         /* Testimonials Slider */
@@ -490,7 +488,7 @@
         }
         
         .testimonial-content {
-            max-width: 100%;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
             background: white;
@@ -501,7 +499,7 @@
         }
         
         .testimonial-quote {
-            font-size: 0.9rem;
+            font-size: 1rem;
             line-height: 1.6;
             color: var(--gray-700);
             margin-bottom: 16px;
@@ -532,12 +530,12 @@
             color: var(--gray-900);
             font-weight: 600;
             margin-bottom: 4px;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
         
         .author-info p {
             color: var(--gray-600);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
         
         .slider-controls {
@@ -606,7 +604,6 @@
         
         .cta-buttons {
             display: flex;
-            flex-direction: column;
             gap: 16px;
             justify-content: center;
             margin-top: 24px;
@@ -658,7 +655,7 @@
         
         .footer-content {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(5, 1fr);
             gap: 24px;
             margin-bottom: 24px;
         }
@@ -736,6 +733,10 @@
                 grid-template-columns: 1fr;
             }
             
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .video-grid {
                 grid-template-columns: 1fr;
             }
@@ -763,20 +764,6 @@
             
             .footer-content {
                 grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .section-subtitle {
-                font-size: 0.9rem;
             }
             
             .hero-content h1 {
@@ -819,6 +806,35 @@
             .btn-secondary {
                 font-size: 0.9rem;
                 padding: 10px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Desktop-specific styles to ensure original layout */
+        @media (min-width: 769px) {
+            .nav-links {
+                display: flex !important;
+            }
+            
+            .hamburger {
+                display: none !important;
+            }
+            
+            .lifecycle-arrow {
+                display: block;
             }
         }
         
@@ -1212,7 +1228,7 @@
             <div class="phase-content">
                 <div class="phase-info fade-in">
                     <h3>Before vs. After WeldVisionIQ</h3>
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 24px; margin: 24px 0;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0;">
                         <div style="background: #fee2e2; padding: 20px; border-radius: 10px; border-left: 4px solid #dc2626;">
                             <h4 style="color: #dc2626; margin-bottom: 12px; font-size: 1rem;">Traditional Inspection</h4>
                             <ul style="list-style: none; padding: 0; color: #7f1d1d;">
@@ -1241,7 +1257,7 @@
                         <div style="color: var(--gray-600); font-size: 0.95rem;">Annual Cost Savings</div>
                         <div style="color: var(--gray-500); font-size: 0.8rem; margin-top: 8px;">Typical automotive manufacturing plant</div>
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
                         <div style="text-align: center;">
                             <div style="font-size: 1.5rem; font-weight: 600; color: var(--primary-cyan); margin-bottom: 8px;">4-8x</div>
                             <div style="color: var(--gray-600); font-size: 0.85rem;">ROI within 12 months</div>
@@ -1268,7 +1284,7 @@
                 <p class="section-subtitle">WeldVisionIQ delivers measurable results in manufacturing environments where quality cannot be compromised</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px;">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 32px;">
                 <div class="module-card fade-in" style="text-align: center;">
                     <div style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 12px;">🚗</div>
                     <h4 style="color: var(--gray-900); margin-bottom: 10px; font-size: 1rem;">Automotive</h4>
