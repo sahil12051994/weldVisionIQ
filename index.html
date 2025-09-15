@@ -78,7 +78,6 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            position: relative;
         }
         
         .nav-links a:hover {
@@ -99,6 +98,36 @@
         .cta-nav:hover {
             transform: translateY(-1px);
             box-shadow: var(--shadow-lg);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         /* Hero Section */
@@ -241,41 +270,7 @@
             margin: 0 20px;
         }
         
-        /* Section Styles */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        
-        .section-title {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 20px;
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--gray-600);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Pre-Weld Section */
-        .pre-weld {
-            background: var(--gray-50);
-        }
-        
+        /* Phase Content Styles */
         .phase-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -386,11 +381,16 @@
             color: var(--gray-700);
         }
         
-        /* Video Section */
-        .video-section {
-            background: white;
+        /* Background alternations */
+        .pre-weld {
+            background: var(--gray-50);
         }
         
+        .testimonials {
+            background: var(--gray-50);
+        }
+        
+        /* Video Section */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -437,11 +437,7 @@
             font-size: 0.9rem;
         }
         
-        /* Testimonials Section */
-        .testimonials {
-            background: var(--gray-50);
-        }
-        
+        /* Testimonials Slider */
         .testimonials-container {
             position: relative;
             overflow: hidden;
@@ -769,7 +765,7 @@
         </div>
     </section>
 
-    <!-- Pre-Weld Section -->
+    <!-- Phase 1: Pre-Weld Section -->
     <section id="pre-weld" class="section pre-weld">
         <div class="container">
             <div class="section-header fade-in">
@@ -786,6 +782,100 @@
                     <div class="roi-highlight">
                         <div class="roi-title">Pre-Weld ROI Impact</div>
                         <div class="roi-value">Eliminate 60% of potential defects before welding begins, reducing rework costs by $2.3M annually for typical automotive plants.</div>
+                    </div>
+                </div>
+                <div class="modules-grid fade-in">
+                    <div class="module-card">
+                        <div class="module-icon">V</div>
+                        <h4 class="module-title">VisionIQ™</h4>
+                        <p class="module-description">Smart material verification and contamination detection</p>
+                        <ul class="module-benefits">
+                            <li>Detects oil, grease, rust contamination</li>
+                            <li>Wrong material grade identification</li>
+                            <li>3D fit-up analysis within ±0.5mm</li>
+                            <li>Automated PMI verification</li>
+                        </ul>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon">P</div>
+                        <h4 class="module-title">Parameter Monitor™</h4>
+                        <p class="module-description">Equipment health and consumable optimization</p>
+                        <ul class="module-benefits">
+                            <li>Worn electrode detection</li>
+                            <li>Gas flow verification</li>
+                            <li>Consumable quality analysis</li>
+                            <li>Equipment calibration status</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 2: Real-Time Section -->
+    <section id="realtime" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Phase 2: Real-Time Monitoring</h2>
+                <p class="section-subtitle">Live defect detection and process correction during welding operations</p>
+            </div>
+            
+            <div class="phase-content">
+                <div class="modules-grid fade-in">
+                    <div class="module-card">
+                        <div class="module-icon">A</div>
+                        <h4 class="module-title">ArcSound™</h4>
+                        <p class="module-description">Acoustic intelligence for real-time defect detection</p>
+                        <ul class="module-benefits">
+                            <li>20,000+ samples/second analysis</li>
+                            <li>99.7% accuracy across 11 defect types</li>
+                            <li>Robotic repetition error detection</li>
+                            <li>Welder fatigue monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon">T</div>
+                        <h4 class="module-title">ThermoTrack™</h4>
+                        <p class="module-description">Advanced thermal analysis and cooling control</p>
+                        <ul class="module-benefits">
+                            <li>MWIR imaging at 2kHz frame rates</li>
+                            <li>Heat-affected zone monitoring</li>
+                            <li>Cooling rate calculation (800-500°C)</li>
+                            <li>Thermal stress prediction</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="phase-info fade-in">
+                    <h3>Catch Problems as They Happen</h3>
+                    <p class="phase-description">
+                        Traditional inspection finds defects after they're created. Our real-time monitoring prevents defects during the welding process itself, providing 2-3 second advance warning before critical failures occur.
+                    </p>
+                    <div class="roi-highlight">
+                        <div class="roi-title">Real-Time ROI Impact</div>
+                        <div class="roi-value">Prevent 95% of robotic repetition errors and eliminate surprise rework costs. Single electrode wear detection saves $50K in scrapped parts.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 3: Post-Weld Section -->
+    <section id="post-weld" class="section pre-weld">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Phase 3: Post-Weld Validation</h2>
+                <p class="section-subtitle">Smart quality confirmation with AI-driven inspection optimization</p>
+            </div>
+            
+            <div class="phase-content">
+                <div class="phase-info fade-in">
+                    <h3>From Sampling to Complete Validation</h3>
+                    <p class="phase-description">
+                        Traditional NDT inspects 5-10% of welds and hopes for the best. Our AI-driven approach provides 100% coverage with 70% reduction in inspection time, ensuring nothing gets missed.
+                    </p>
+                    <div class="roi-highlight">
+                        <div class="roi-title">Post-Weld ROI Impact</div>
+                        <div class="roi-value">Eliminate recall risks worth $50M+ while reducing inspection costs by 40%. Complete traceability for aerospace and automotive compliance.</div>
                     </div>
                 </div>
                 <div class="modules-grid fade-in">
@@ -817,7 +907,7 @@
     </section>
 
     <!-- Video Technology Section -->
-    <section id="videos" class="section video-section">
+    <section id="videos" class="section">
         <div class="container">
             <div class="section-header fade-in">
                 <h2 class="section-title">Technology in Action</h2>
@@ -1020,6 +1110,42 @@
                             <div style="color: var(--gray-600); font-size: 0.9rem;">Inspection time reduction</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Applications -->
+    <section class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Proven Across Critical Industries</h2>
+                <p class="section-subtitle">WeldVisionIQ delivers measurable results in manufacturing environments where quality cannot be compromised</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 50px;">
+                <div class="module-card fade-in" style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 16px;">🚗</div>
+                    <h4 style="color: var(--gray-900); margin-bottom: 12px;">Automotive</h4>
+                    <p style="color: var(--gray-600); font-size: 0.95rem;">3,000+ spots per vehicle with zero tolerance for recalls. Prevent $50M+ failures like Swift Dzire case.</p>
+                </div>
+                
+                <div class="module-card fade-in" style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 16px;">✈️</div>
+                    <h4 style="color: var(--gray-900); margin-bottom: 12px;">Aerospace</h4>
+                    <p style="color: var(--gray-600); font-size: 0.95rem;">Critical titanium and aluminum welds with NADCAP compliance requirements and zero-defect mandates.</p>
+                </div>
+                
+                <div class="module-card fade-in" style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 16px;">🏗️</div>
+                    <h4 style="color: var(--gray-900); margin-bottom: 12px;">Infrastructure</h4>
+                    <p style="color: var(--gray-600); font-size: 0.95rem;">Bridge and pipeline welds requiring 50+ year integrity with complete public safety responsibility.</p>
+                </div>
+                
+                <div class="module-card fade-in" style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 16px;">⚡</div>
+                    <h4 style="color: var(--gray-900); margin-bottom: 12px;">Energy</h4>
+                    <p style="color: var(--gray-600); font-size: 0.95rem;">High-pressure pipeline joints and offshore platform structures where failure costs $100M+ in cleanup.</p>
                 </div>
             </div>
         </div>
@@ -1228,97 +1354,4 @@
         });
     </script>
 </body>
-</html><div class="module-icon">V</div>
-                        <h4 class="module-title">VisionIQ™</h4>
-                        <p class="module-description">Smart material verification and contamination detection</p>
-                        <ul class="module-benefits">
-                            <li>Detects oil, grease, rust contamination</li>
-                            <li>Wrong material grade identification</li>
-                            <li>3D fit-up analysis within ±0.5mm</li>
-                            <li>Automated PMI verification</li>
-                        </ul>
-                    </div>
-                    <div class="module-card">
-                        <div class="module-icon">P</div>
-                        <h4 class="module-title">Parameter Monitor™</h4>
-                        <p class="module-description">Equipment health and consumable optimization</p>
-                        <ul class="module-benefits">
-                            <li>Worn electrode detection</li>
-                            <li>Gas flow verification</li>
-                            <li>Consumable quality analysis</li>
-                            <li>Equipment calibration status</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Real-Time Section -->
-    <section id="realtime" class="section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Phase 2: Real-Time Monitoring</h2>
-                <p class="section-subtitle">Live defect detection and process correction during welding operations</p>
-            </div>
-            
-            <div class="phase-content">
-                <div class="modules-grid fade-in">
-                    <div class="module-card">
-                        <div class="module-icon">A</div>
-                        <h4 class="module-title">ArcSound™</h4>
-                        <p class="module-description">Acoustic intelligence for real-time defect detection</p>
-                        <ul class="module-benefits">
-                            <li>20,000+ samples/second analysis</li>
-                            <li>99.7% accuracy across 11 defect types</li>
-                            <li>Robotic repetition error detection</li>
-                            <li>Welder fatigue monitoring</li>
-                        </ul>
-                    </div>
-                    <div class="module-card">
-                        <div class="module-icon">T</div>
-                        <h4 class="module-title">ThermoTrack™</h4>
-                        <p class="module-description">Advanced thermal analysis and cooling control</p>
-                        <ul class="module-benefits">
-                            <li>MWIR imaging at 2kHz frame rates</li>
-                            <li>Heat-affected zone monitoring</li>
-                            <li>Cooling rate calculation (800-500°C)</li>
-                            <li>Thermal stress prediction</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="phase-info fade-in">
-                    <h3>Catch Problems as They Happen</h3>
-                    <p class="phase-description">
-                        Traditional inspection finds defects after they're created. Our real-time monitoring prevents defects during the welding process itself, providing 2-3 second advance warning before critical failures occur.
-                    </p>
-                    <div class="roi-highlight">
-                        <div class="roi-title">Real-Time ROI Impact</div>
-                        <div class="roi-value">Prevent 95% of robotic repetition errors and eliminate surprise rework costs. Single electrode wear detection saves $50K in scrapped parts.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Post-Weld Section -->
-    <section id="post-weld" class="section pre-weld">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Phase 3: Post-Weld Validation</h2>
-                <p class="section-subtitle">Smart quality confirmation with AI-driven inspection optimization</p>
-            </div>
-            
-            <div class="phase-content">
-                <div class="phase-info fade-in">
-                    <h3>From Sampling to Complete Validation</h3>
-                    <p class="phase-description">
-                        Traditional NDT inspects 5-10% of welds and hopes for the best. Our AI-driven approach provides 100% coverage with 70% reduction in inspection time, ensuring nothing gets missed.
-                    </p>
-                    <div class="roi-highlight">
-                        <div class="roi-title">Post-Weld ROI Impact</div>
-                        <div class="roi-value">Eliminate recall risks worth $50M+ while reducing inspection costs by 40%. Complete traceability for aerospace and automotive compliance.</div>
-                    </div>
-                </div>
-                <div class="modules-grid fade-in">
-                    <div class="module-card">
+</html>
