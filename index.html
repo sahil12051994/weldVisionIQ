@@ -1349,8 +1349,8 @@
                 
                 <div class="footer-section">
                     <h3>Contact Information</h3>
-                    <p>Email: info@weldvisioniq.com</p>
-                    <p>Phone: +91-124-XXX-XXXX</p>
+                    <p>Email: <a href="mailto:t-Vjain@mail.nasscom.in">t-Vjain@mail.nasscom.in</a></p>
+                    <p>Phone: <a href="#" onclick="openWhatsApp()">+91-9811136098</a></p>
                     <p>Address: Gurugram, Haryana, India</p>
                     <a href="#contact">Schedule Demonstration</a>
                     <a href="#">Technical Support Portal</a>
@@ -1370,6 +1370,15 @@
             const hamburger = document.querySelector('.hamburger');
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
+        }
+
+        // WhatsApp routing for mobile
+        function openWhatsApp() {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                window.location.href = 'https://wa.me/919811136098';
+            } else {
+                alert('Please contact us at +91-9811136098 for further assistance.');
+            }
         }
 
         // Testimonial Slider Functionality
