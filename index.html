@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeldVisionIQ - AI-Powered Weld Inspection Revolution</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>WeldVisionIQ - Complete Weld Lifecycle Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            --primary-cyan: #00ffcc;
-            --primary-blue: #0066ff;
-            --dark-bg: #0a0a0a;
-            --darker-bg: #050505;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --gradient-primary: linear-gradient(135deg, var(--primary-cyan) 0%, var(--primary-blue) 100%);
-            --gradient-dark: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+            --primary-blue: #1e40af;
+            --primary-cyan: #0891b2;
+            --accent-orange: #ea580c;
+            --light-bg: #fefefe;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-cyan) 100%);
+            --gradient-light: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
         
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
-            overflow-x: hidden;
+            background: var(--light-bg);
+            color: var(--gray-900);
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
         
@@ -34,10 +41,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 40px;
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
+            padding: 16px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -48,10 +55,11 @@
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 40px;
         }
         
         .logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
@@ -66,206 +74,182 @@
         }
         
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--gray-700);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
         }
         
         .nav-links a:hover {
-            color: var(--primary-cyan);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
+            color: var(--primary-blue);
         }
         
         .cta-nav {
-            padding: 12px 24px;
+            padding: 12px 28px;
             background: var(--gradient-primary);
-            color: var(--dark-bg);
+            color: white;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 255, 204, 0.3);
+            box-shadow: var(--shadow-md);
         }
         
         .cta-nav:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 255, 204, 0.5);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
         }
         
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 140px 0 100px;
+            background: var(--gradient-light);
             position: relative;
-            background: var(--gradient-dark);
             overflow: hidden;
         }
         
-        .hero-grid {
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
+            right: 0;
+            width: 50%;
             height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: grid-move 20s linear infinite;
+            background: linear-gradient(45deg, transparent 0%, rgba(30, 64, 175, 0.05) 100%);
         }
         
-        @keyframes grid-move {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-        
-        .hero-content {
-            text-align: center;
-            max-width: 1000px;
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
             padding: 0 40px;
-            position: relative;
-            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
         
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 7rem);
+        .hero-content h1 {
+            font-size: clamp(3rem, 5vw, 4.5rem);
             font-weight: 700;
-            margin-bottom: 30px;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+        
+        .hero-highlight {
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 50px rgba(0, 255, 204, 0.3);
-            animation: glow-pulse 3s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow-pulse {
-            from { filter: drop-shadow(0 0 20px rgba(0, 255, 204, 0.3)); }
-            to { filter: drop-shadow(0 0 40px rgba(0, 255, 204, 0.6)); }
         }
         
         .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-        
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 50px;
-            line-height: 1.6;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.3rem;
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            font-weight: 400;
         }
         
         .hero-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin: 48px 0;
         }
         
         .stat-item {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px 20px;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px 20px;
             text-align: center;
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
         }
         
         .stat-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 255, 204, 0.2);
-            border-color: var(--primary-cyan);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-blue);
         }
         
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            color: var(--primary-cyan);
+            color: var(--primary-blue);
             display: block;
+            margin-bottom: 8px;
         }
         
         .stat-label {
-            color: var(--text-secondary);
+            color: var(--gray-600);
             font-size: 0.9rem;
-            margin-top: 10px;
+            font-weight: 500;
         }
         
-        .hero-cta {
+        .hero-visual {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .lifecycle-diagram {
             display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 50px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
         }
         
-        .btn-primary {
-            padding: 18px 40px;
+        .lifecycle-phase {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+        
+        .phase-icon {
+            width: 60px;
+            height: 60px;
             background: var(--gradient-primary);
-            color: var(--dark-bg);
-            text-decoration: none;
-            border-radius: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0 auto 12px;
+        }
+        
+        .phase-title {
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 30px rgba(0, 255, 204, 0.3);
-            border: none;
-            cursor: pointer;
+            color: var(--gray-900);
+            margin-bottom: 4px;
         }
         
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 255, 204, 0.5);
+        .phase-subtitle {
+            font-size: 0.8rem;
+            color: var(--gray-600);
         }
         
-        .btn-secondary {
-            padding: 18px 40px;
-            background: transparent;
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: 2px solid var(--glass-border);
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .lifecycle-arrow {
+            color: var(--gray-400);
+            font-size: 1.5rem;
+            margin: 0 20px;
         }
         
-        .btn-secondary:hover {
-            border-color: var(--primary-cyan);
-            color: var(--primary-cyan);
-            box-shadow: 0 8px 30px rgba(0, 255, 204, 0.2);
-        }
-        
-        /* Problem Section */
+        /* Section Styles */
         .section {
-            padding: 120px 40px;
+            padding: 100px 0;
+        }
+        
+        .container {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 40px;
         }
         
         .section-header {
@@ -274,428 +258,403 @@
         }
         
         .section-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
             font-weight: 700;
+            color: var(--gray-900);
             margin-bottom: 20px;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         
         .section-subtitle {
             font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
+            color: var(--gray-600);
+            max-width: 700px;
             margin: 0 auto;
-            line-height: 1.6;
         }
         
-        .crisis-stats {
+        /* Pre-Weld Section */
+        .pre-weld {
+            background: var(--gray-50);
+        }
+        
+        .phase-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
             margin-bottom: 80px;
         }
         
-        .crisis-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .crisis-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .crisis-card:hover::before {
-            opacity: 1;
-        }
-        
-        .crisis-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 255, 204, 0.1);
-            border-color: var(--primary-cyan);
-        }
-        
-        .crisis-number {
-            font-size: 3rem;
+        .phase-info h3 {
+            font-size: 2.2rem;
             font-weight: 700;
-            color: #ff6b6b;
-            margin-bottom: 15px;
+            color: var(--gray-900);
+            margin-bottom: 24px;
         }
         
-        .crisis-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text-primary);
+        .phase-description {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            line-height: 1.7;
         }
         
-        .crisis-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-        
-        /* Solution Section */
-        .solution-grid {
+        .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
         
         .module-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .module-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--gradient-primary);
-            border-radius: 24px;
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-        }
-        
-        .module-card:hover::before {
-            opacity: 1;
         }
         
         .module-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(0, 255, 204, 0.2);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-blue);
         }
         
         .module-icon {
-            width: 60px;
-            height: 60px;
+            width: 56px;
+            height: 56px;
             background: var(--gradient-primary);
-            border-radius: 16px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
-            font-size: 24px;
-            color: var(--dark-bg);
-            font-weight: bold;
-        }
-        
-        .module-title {
+            color: white;
+            font-weight: 700;
             font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text-primary);
-        }
-        
-        .module-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
             margin-bottom: 20px;
         }
         
-        .module-features {
+        .module-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+        
+        .module-description {
+            color: var(--gray-600);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .module-benefits {
             list-style: none;
             padding: 0;
         }
         
-        .module-features li {
-            color: var(--text-secondary);
+        .module-benefits li {
+            color: var(--gray-700);
             margin-bottom: 8px;
+            padding-left: 20px;
             position: relative;
-            padding-left: 25px;
             font-size: 0.95rem;
         }
         
-        .module-features li::before {
+        .module-benefits li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--primary-cyan);
-            font-weight: bold;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .roi-highlight {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid var(--primary-cyan);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+        
+        .roi-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+        
+        .roi-value {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+        }
+        
+        /* Video Section */
+        .video-section {
+            background: white;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .video-item {
+            background: var(--gray-50);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            height: 250px;
+            background: var(--gray-200);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            border: 2px dashed var(--gray-300);
+            transition: all 0.3s ease;
+        }
+        
+        .video-placeholder:hover {
+            background: var(--gray-300);
+            border-color: var(--primary-blue);
+        }
+        
+        .video-title {
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        
+        .video-description {
+            color: var(--gray-600);
+            font-size: 0.9rem;
         }
         
         /* Testimonials Section */
         .testimonials {
-            background: var(--darker-bg);
+            background: var(--gray-50);
+        }
+        
+        .testimonials-container {
             position: relative;
             overflow: hidden;
         }
         
-        .testimonials::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 255, 204, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 204, 0.02) 1px, transparent 1px);
-            background-size: 100px 100px;
+        .testimonials-slider {
+            display: flex;
+            transition: transform 0.5s ease;
         }
         
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-            position: relative;
-            z-index: 2;
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 20px;
         }
         
-        .testimonial-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 255, 204, 0.1);
-            border-color: var(--primary-cyan);
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: white;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
         }
         
         .testimonial-quote {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text-primary);
-            margin-bottom: 30px;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 32px;
             font-style: italic;
-            position: relative;
-        }
-        
-        .testimonial-quote::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--primary-cyan);
-            position: absolute;
-            top: -20px;
-            left: -10px;
-            opacity: 0.3;
         }
         
         .testimonial-author {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 20px;
         }
         
         .author-avatar {
-            width: 60px;
-            height: 60px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dark-bg);
+            color: white;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         
         .author-info h4 {
-            color: var(--text-primary);
+            color: var(--gray-900);
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
         
         .author-info p {
-            color: var(--text-secondary);
+            color: var(--gray-600);
             font-size: 0.9rem;
         }
         
-        /* ROI Section */
-        .roi-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            margin-top: 60px;
-        }
-        
-        .roi-content h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: var(--text-primary);
-        }
-        
-        .roi-benefits {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .roi-benefits li {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--glass-border);
+        .slider-controls {
             display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: all 0.3s ease;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
         }
         
-        .roi-benefits li:hover {
-            padding-left: 20px;
-            border-bottom-color: var(--primary-cyan);
-        }
-        
-        .benefit-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-primary);
-            border-radius: 10px;
+        .slider-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--gray-300);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dark-bg);
-            font-weight: bold;
-            flex-shrink: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--gray-600);
+            font-size: 1.2rem;
         }
         
-        .benefit-text {
-            color: var(--text-secondary);
-            line-height: 1.5;
+        .slider-btn:hover {
+            border-color: var(--primary-blue);
+            background: var(--primary-blue);
+            color: white;
         }
         
-        .roi-visual {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            text-align: center;
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
         }
         
-        .roi-number {
-            font-size: 4rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 15px;
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gray-300);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
         
-        .roi-label {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
+        .dot.active {
+            background: var(--primary-blue);
+            transform: scale(1.2);
         }
         
         /* CTA Section */
         .cta-section {
-            background: var(--gradient-dark);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at center, rgba(0, 255, 204, 0.1) 0%, transparent 70%);
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .cta-section h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 30px;
             background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: white;
+            text-align: center;
         }
         
-        .cta-section p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 50px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
+        .cta-section .section-title {
+            color: white;
+        }
+        
+        .cta-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 48px;
+        }
+        
+        .btn-primary {
+            padding: 16px 32px;
+            background: white;
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            padding: 16px 32px;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
         }
         
         /* Footer */
         footer {
-            background: var(--darker-bg);
-            padding: 60px 40px 30px;
-            border-top: 1px solid var(--glass-border);
+            background: var(--gray-900);
+            color: white;
+            padding: 80px 0 40px;
         }
         
         .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
         
         .footer-section h3 {
             font-weight: 600;
             margin-bottom: 20px;
-            color: var(--text-primary);
+            color: white;
         }
         
         .footer-section p,
         .footer-section a {
-            color: var(--text-secondary);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             line-height: 1.6;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: block;
             transition: color 0.3s ease;
         }
         
         .footer-section a:hover {
-            color: var(--primary-cyan);
+            color: white;
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-secondary);
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
         }
         
         /* Responsive Design */
@@ -704,26 +663,30 @@
                 display: none;
             }
             
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .roi-container {
+            .hero-container,
+            .phase-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
             
-            .testimonial-grid {
+            .hero-stats {
                 grid-template-columns: 1fr;
             }
             
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
             .section {
-                padding: 80px 20px;
+                padding: 60px 0;
             }
         }
         
-        /* Scroll Animations */
+        /* Animation Classes */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -742,316 +705,319 @@
         <div class="nav-container">
             <div class="logo">WeldVisionIQ™</div>
             <ul class="nav-links">
-                <li><a href="#problem">Problem</a></li>
-                <li><a href="#solution">Solution</a></li>
-                <li><a href="#modules">Modules</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#roi">ROI</a></li>
+                <li><a href="#pre-weld">Pre-Weld</a></li>
+                <li><a href="#realtime">Real-Time</a></li>
+                <li><a href="#post-weld">Post-Weld</a></li>
+                <li><a href="#videos">Technology</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
             </ul>
-            <a href="#contact" class="cta-nav">Get Demo</a>
+            <a href="#contact" class="cta-nav">Schedule Demo</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-grid"></div>
-        <div class="hero-content">
-            <h1>WeldVisionIQ™</h1>
-            <p class="hero-subtitle">Revolutionizing Weld Quality Assurance</p>
-            <p class="hero-description">
-                The world's first AI-powered holistic weld inspection ecosystem. Transform from reactive inspection to predictive quality assurance with 99.7% detection accuracy.
-            </p>
-            
-            <div class="hero-stats">
-                <div class="stat-item fade-in">
-                    <span class="stat-number">99.7%</span>
-                    <span class="stat-label">Detection Accuracy</span>
-                </div>
-                <div class="stat-item fade-in">
-                    <span class="stat-number">$15B+</span>
-                    <span class="stat-label">Annual Weld Failure Cost</span>
-                </div>
-                <div class="stat-item fade-in">
-                    <span class="stat-number">70%</span>
-                    <span class="stat-label">NDT Reduction</span>
-                </div>
-                <div class="stat-item fade-in">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Inspection Coverage</span>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Complete <span class="hero-highlight">Weld Lifecycle</span> Intelligence</h1>
+                <p class="hero-subtitle">The only AI-powered platform that prevents, detects, and validates weld defects across pre-weld setup, real-time monitoring, and post-weld inspection.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">99.7%</span>
+                        <span class="stat-label">Detection Accuracy</span>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">4-8x</span>
+                        <span class="stat-label">ROI in 12 Months</span>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">70%</span>
+                        <span class="stat-label">NDT Reduction</span>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Weld Coverage</span>
+                    </div>
                 </div>
             </div>
             
-            <div class="hero-cta">
-                <a href="#contact" class="btn-primary">Schedule Free Demo</a>
-                <a href="#solution" class="btn-secondary">Explore Technology</a>
+            <div class="hero-visual fade-in">
+                <div class="lifecycle-diagram">
+                    <div class="lifecycle-phase">
+                        <div class="phase-icon">1</div>
+                        <div class="phase-title">Pre-Weld</div>
+                        <div class="phase-subtitle">Prevention</div>
+                    </div>
+                    <div class="lifecycle-arrow">→</div>
+                    <div class="lifecycle-phase">
+                        <div class="phase-icon">2</div>
+                        <div class="phase-title">Real-Time</div>
+                        <div class="phase-subtitle">Detection</div>
+                    </div>
+                    <div class="lifecycle-arrow">→</div>
+                    <div class="lifecycle-phase">
+                        <div class="phase-icon">3</div>
+                        <div class="phase-title">Post-Weld</div>
+                        <div class="phase-subtitle">Validation</div>
+                    </div>
+                </div>
+                <p style="text-align: center; color: var(--gray-600); font-size: 0.9rem; margin-top: 20px;">
+                    Transform from reactive inspection to predictive quality assurance
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section id="problem" class="section">
-        <div class="section-header fade-in">
-            <h2 class="section-title">The Critical Crisis</h2>
-            <p class="section-subtitle">Weld failures cost industries $50B+ annually with catastrophic safety consequences</p>
-        </div>
-        
-        <div class="crisis-stats">
-            <div class="crisis-card fade-in">
-                <div class="crisis-number">$15B+</div>
-                <h3 class="crisis-title">Automotive Manufacturing</h3>
-                <p class="crisis-description">Annual cost of weld failures in global automotive manufacturing. Single recalls like JBM's Swift Dzire cost $50M+ with 150,000 vehicles affected.</p>
+    <!-- Pre-Weld Section -->
+    <section id="pre-weld" class="section pre-weld">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Phase 1: Pre-Weld Intelligence</h2>
+                <p class="section-subtitle">Prevent defects before they start with smart material verification and setup optimization</p>
             </div>
             
-            <div class="crisis-card fade-in">
-                <div class="crisis-number">123</div>
-                <h3 class="crisis-title">Fatalities from Failures</h3>
-                <p class="crisis-description">Alexander L. Kielland disaster - 123 deaths from undetected weld cracks. BNSF derailment caused $15.6M damage from thermite weld failure.</p>
-            </div>
-            
-            <div class="crisis-card fade-in">
-                <div class="crisis-number">60-80%</div>
-                <h3 class="crisis-title">Detection Accuracy</h3>
-                <p class="crisis-description">Traditional manual inspection accuracy vs. required 99.9% for safety-critical components. 20-40% of defects go undetected until catastrophic failure.</p>
+            <div class="phase-content">
+                <div class="phase-info fade-in">
+                    <h3>Prevention is Better Than Detection</h3>
+                    <p class="phase-description">
+                        85% of weld failures originate from improper setup conditions. Our pre-weld intelligence eliminates the root causes that lead to catastrophic defects, saving you from the exponential costs of downstream discovery.
+                    </p>
+                    <div class="roi-highlight">
+                        <div class="roi-title">Pre-Weld ROI Impact</div>
+                        <div class="roi-value">Eliminate 60% of potential defects before welding begins, reducing rework costs by $2.3M annually for typical automotive plants.</div>
+                    </div>
+                </div>
+                <div class="modules-grid fade-in">
+                    <div class="module-card">
+                        <div class="module-icon">U</div>
+                        <h4 class="module-title">UT-Probe™</h4>
+                        <p class="module-description">Advanced ultrasonic and phased array testing</p>
+                        <ul class="module-benefits">
+                            <li>100% weld coverage vs. 5-10% sampling</li>
+                            <li>Phased array beam steering</li>
+                            <li>Volumetric defect detection</li>
+                            <li>Real-time flaw characterization</li>
+                        </ul>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon">X</div>
+                        <h4 class="module-title">WeldX-Ray™</h4>
+                        <p class="module-description">Instant digital radiographic analysis</p>
+                        <ul class="module-benefits">
+                            <li>Instant results vs. days of waiting</li>
+                            <li>92% AI accuracy across 6 defect types</li>
+                            <li>Automated compliance reporting</li>
+                            <li>Complete internal visualization</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section id="solution" class="section">
-        <div class="section-header fade-in">
-            <h2 class="section-title">Complete Lifecycle Solution</h2>
-            <p class="section-subtitle">The world's first AI-powered holistic weld inspection ecosystem covering pre-weld, real-time, and post-weld phases</p>
-        </div>
-        
-        <div class="solution-grid" id="modules">
-            <div class="module-card fade-in">
-                <div class="module-icon">V</div>
-                <h3 class="module-title">VisionIQ™</h3>
-                <p class="module-description">Pre-weld intelligence preventing setup failures</p>
-                <ul class="module-features">
-                    <li>Detects oil contamination, wrong materials, poor fit-up</li>
-                    <li>3D geometric analysis with ±0.5mm precision</li>
-                    <li>Automated material verification and PMI</li>
-                    <li>Eliminates "Why did this batch fail?" mysteries</li>
-                </ul>
+    <!-- Video Technology Section -->
+    <section id="videos" class="section video-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Technology in Action</h2>
+                <p class="section-subtitle">See how WeldVisionIQ transforms manufacturing quality across different applications</p>
             </div>
             
-            <div class="module-card fade-in">
-                <div class="module-icon">A</div>
-                <h3 class="module-title">ArcSound™</h3>
-                <p class="module-description">Revolutionary acoustic intelligence for real-time defect detection</p>
-                <ul class="module-features">
-                    <li>20,000+ samples/second acoustic analysis</li>
-                    <li>99.7% accuracy across 11 defect categories</li>
-                    <li>Catches robotic repetition errors immediately</li>
-                    <li>Detects welder fatigue and skill variations</li>
-                </ul>
-            </div>
-            
-            <div class="module-card fade-in">
-                <div class="module-icon">T</div>
-                <h3 class="module-title">ThermoTrack™</h3>
-                <p class="module-description">Advanced infrared weld analysis and thermal intelligence</p>
-                <ul class="module-features">
-                    <li>MWIR imaging with 2kHz frame rates</li>
-                    <li>Heat-affected zone monitoring and control</li>
-                    <li>Cooling rate calculation (800°C to 500°C)</li>
-                    <li>Preserves retiring welder expertise</li>
-                </ul>
-            </div>
-            
-            <div class="module-card fade-in">
-                <div class="module-icon">P</div>
-                <h3 class="module-title">Process Monitor™</h3>
-                <p class="module-description">Statistical process control with real-time Cp/Cpk analysis</p>
-                <ul class="module-features">
-                    <li>Monitors 20+ critical parameters simultaneously</li>
-                    <li>Alerts on process drift within minutes</li>
-                    <li>Real-time SPC calculations and control charts</li>
-                    <li>Ensures focus on quality over speed</li>
-                </ul>
-            </div>
-            
-            <div class="module-card fade-in">
-                <div class="module-icon">U</div>
-                <h3 class="module-title">UT-Probe™</h3>
-                <p class="module-description">Advanced ultrasonic and phased array testing</p>
-                <ul class="module-features">
-                    <li>Scans every critical weld internally vs. 1/100 sampling</li>
-                    <li>Phased array beam steering and focusing</li>
-                    <li>Volumetric defect detection and 3D mapping</li>
-                    <li>Real-time flaw characterization and sizing</li>
-                </ul>
-            </div>
-            
-            <div class="module-card fade-in">
-                <div class="module-icon">X</div>
-                <h3 class="module-title">WeldX-Ray™</h3>
-                <p class="module-description">Instant digital radiographic analysis</p>
-                <ul class="module-features">
-                    <li>Instant results vs. days of waiting</li>
-                    <li>92% accuracy across 6 defect categories</li>
-                    <li>Automated IQI validation and compliance</li>
-                    <li>Complete internal structure visualization</li>
-                </ul>
+            <div class="video-grid">
+                <div class="video-item fade-in">
+                    <div class="video-placeholder">
+                        🎥 ArcSound™ Acoustic Detection Demo<br>
+                        <small>Real-time defect detection during MIG welding</small>
+                    </div>
+                    <h4 class="video-title">Acoustic Intelligence Demo</h4>
+                    <p class="video-description">Watch ArcSound™ detect porosity and lack of fusion in real-time during automotive spot welding operations.</p>
+                </div>
+                
+                <div class="video-item fade-in">
+                    <div class="video-placeholder">
+                        🎥 ThermoTrack™ Thermal Analysis<br>
+                        <small>Heat-affected zone monitoring</small>
+                    </div>
+                    <h4 class="video-title">Thermal Monitoring System</h4>
+                    <p class="video-description">See how thermal intelligence prevents overheating and predicts cooling defects in aluminum aerospace components.</p>
+                </div>
+                
+                <div class="video-item fade-in">
+                    <div class="video-placeholder">
+                        🎥 VisionIQ™ Pre-Weld Setup<br>
+                        <small>Smart contamination detection</small>
+                    </div>
+                    <h4 class="video-title">Pre-Weld Intelligence</h4>
+                    <p class="video-description">Discover how VisionIQ™ detects oil contamination and material defects before welding begins, preventing costly failures.</p>
+                </div>
+                
+                <div class="video-item fade-in">
+                    <div class="video-placeholder">
+                        🎥 Complete System Integration<br>
+                        <small>End-to-end quality assurance</small>
+                    </div>
+                    <h4 class="video-title">Integrated Quality Solution</h4>
+                    <p class="video-description">Full lifecycle demonstration showing pre-weld through post-weld validation in heavy manufacturing environment.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="section testimonials">
-        <div class="section-header fade-in">
-            <h2 class="section-title">Industry Leaders Choose WeldVisionIQ™</h2>
-            <p class="section-subtitle">Transforming manufacturing quality across automotive, aerospace, and infrastructure sectors</p>
-        </div>
-        
-        <div class="testimonial-grid">
-            <div class="testimonial-card fade-in">
-                <p class="testimonial-quote">
-                    WeldVisionIQ transformed our body-in-white operations completely. We went from reactive firefighting to predictive quality control. The acoustic monitoring caught electrode wear issues that would have scrapped 500+ vehicles. ROI achieved in just 4 months.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">RS</div>
-                    <div class="author-info">
-                        <h4>Rajesh Sharma</h4>
-                        <p>VP Manufacturing, Tier-1 Automotive Supplier</p>
-                    </div>
-                </div>
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">Industry leaders transforming their manufacturing quality with WeldVisionIQ</p>
             </div>
             
-            <div class="testimonial-card fade-in">
-                <p class="testimonial-quote">
-                    The real-time defect detection is revolutionary. Our welders now perform like veterans from day one thanks to AI guidance. We eliminated surprise rework costs and achieved 99.8% first-pass quality - something we thought was impossible.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MK</div>
-                    <div class="author-info">
-                        <h4>Michael Chen</h4>
-                        <p>Quality Director, Heavy Equipment Manufacturing</p>
+            <div class="testimonials-container">
+                <div class="testimonials-slider" id="testimonials-slider">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content fade-in">
+                            <p class="testimonial-quote">
+                                "WeldVisionIQ completely transformed our body-in-white operations. The acoustic monitoring caught electrode wear that would have scrapped 500+ vehicles. We went from reactive firefighting to predictive quality control with ROI achieved in just 4 months."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">RS</div>
+                                <div class="author-info">
+                                    <h4>Rajesh Sharma</h4>
+                                    <p>VP Manufacturing, Tier-1 Automotive Supplier</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                "The real-time defect detection is revolutionary. Our new welders now perform like veterans from day one thanks to AI guidance. We eliminated surprise rework costs and achieved 99.8% first-pass quality - something we thought was impossible."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">MC</div>
+                                <div class="author-info">
+                                    <h4>Michael Chen</h4>
+                                    <p>Quality Director, Heavy Equipment Manufacturing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                "For aerospace applications, WeldVisionIQ's multi-modal inspection gives us confidence we've never had before. The system detected titanium weld defects that traditional NDT missed. Critical for our zero-defect mandate and NADCAP compliance."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">SP</div>
+                                <div class="author-info">
+                                    <h4>Dr. Sarah Patel</h4>
+                                    <p>Chief Engineer, Defense Contractor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                "After our recall crisis, WeldVisionIQ became essential. Pre-weld contamination detection alone saved us from another potential disaster. Now every weld is monitored, documented, and validated in real-time with complete traceability."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">AJ</div>
+                                <div class="author-info">
+                                    <h4>Amit Joshi</h4>
+                                    <p>COO, Automotive Systems Manufacturer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-quote">
+                                "Infrastructure projects demand 50-year weld integrity. WeldVisionIQ's thermal analysis and cooling rate monitoring ensure our bridge welds meet the highest standards. Complete peace of mind for public safety critical applications."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">DM</div>
+                                <div class="author-info">
+                                    <h4>David Martinez</h4>
+                                    <p>Project Director, Infrastructure Development</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="testimonial-card fade-in">
-                <p class="testimonial-quote">
-                    For aerospace applications, WeldVisionIQ's multi-modal inspection gives us confidence we've never had before. The system detected titanium weld defects that traditional NDT missed. Critical for our zero-defect mandate.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">SP</div>
-                    <div class="author-info">
-                        <h4>Dr. Sarah Patel</h4>
-                        <p>Chief Engineer, Defense Contractor</p>
-                    </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn" onclick="previousTestimonial()">‹</button>
+                    <button class="slider-btn" onclick="nextTestimonial()">›</button>
                 </div>
-            </div>
-            
-            <div class="testimonial-card fade-in">
-                <p class="testimonial-quote">
-                    After the recall nightmare we faced, WeldVisionIQ became essential. The pre-weld contamination detection alone saved us from another potential disaster. Now every weld is monitored, documented, and validated in real-time.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">AJ</div>
-                    <div class="author-info">
-                        <h4>Amit Joshi</h4>
-                        <p>COO, Automotive Systems Manufacturer</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card fade-in">
-                <p class="testimonial-quote">
-                    Infrastructure projects demand 50-year weld integrity. WeldVisionIQ's thermal analysis and cooling rate monitoring ensure our bridge welds meet the highest standards. Complete peace of mind for public safety.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">DM</div>
-                    <div class="author-info">
-                        <h4>David Martinez</h4>
-                        <p>Project Director, Infrastructure Development</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card fade-in">
-                <p class="testimonial-quote">
-                    The statistical process control integration revolutionized our lean manufacturing. Real-time Cp/Cpk analysis with automated alerts eliminated process drift. Our customers now use us as the quality benchmark.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">LW</div>
-                    <div class="author-info">
-                        <h4>Lisa Wang</h4>
-                        <p>Operations Manager, Contract Manufacturing</p>
-                    </div>
+                
+                <div class="slider-dots">
+                    <span class="dot active" onclick="currentTestimonial(1)"></span>
+                    <span class="dot" onclick="currentTestimonial(2)"></span>
+                    <span class="dot" onclick="currentTestimonial(3)"></span>
+                    <span class="dot" onclick="currentTestimonial(4)"></span>
+                    <span class="dot" onclick="currentTestimonial(5)"></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ROI Section -->
-    <section id="roi" class="section">
-        <div class="section-header fade-in">
-            <h2 class="section-title">Transformative ROI</h2>
-            <p class="section-subtitle">From reactive inspection to predictive quality assurance with measurable impact</p>
-        </div>
-        
-        <div class="roi-container">
-            <div class="roi-content fade-in">
-                <h3>Real Manufacturing Impact</h3>
-                <ul class="roi-benefits">
-                    <li>
-                        <div class="benefit-icon">✓</div>
-                        <div class="benefit-text">
-                            <strong>Eliminate Surprise Recalls:</strong> Catch defects at weld cell, not after customer delivery
-                        </div>
-                    </li>
-                    <li>
-                        <div class="benefit-icon">⚡</div>
-                        <div class="benefit-text">
-                            <strong>Robotic Reliability:</strong> Transform unreliable robotic welding into consistent quality
-                        </div>
-                    </li>
-                    <li>
-                        <div class="benefit-icon">🎯</div>
-                        <div class="benefit-text">
-                            <strong>Instant Expert Welders:</strong> New welders perform like veterans with AI guidance
-                        </div>
-                    </li>
-                    <li>
-                        <div class="benefit-icon">📊</div>
-                        <div class="benefit-text">
-                            <strong>Proactive Quality:</strong> Quality department becomes predictive instead of reactive
-                        </div>
-                    </li>
-                    <li>
-                        <div class="benefit-icon">💰</div>
-                        <div class="benefit-text">
-                            <strong>Cost Multiplier Prevention:</strong> Fix issues at source vs. exponential downstream costs
-                        </div>
-                    </li>
-                </ul>
+    <!-- ROI Comparison Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Measurable Business Impact</h2>
+                <p class="section-subtitle">Transform from "hope and pray" to "know and control" quality with quantifiable results</p>
             </div>
             
-            <div class="roi-visual fade-in">
-                <div class="roi-number">4-8x</div>
-                <div class="roi-label">ROI within 12 months</div>
-                <div style="margin: 40px 0; padding: 30px; background: var(--glass-bg); border-radius: 16px;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left;">
-                        <div>
-                            <h4 style="color: var(--primary-cyan); margin-bottom: 10px;">Before</h4>
-                            <ul style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                                <li>60-80% detection accuracy</li>
-                                <li>5-10% inspection coverage</li>
-                                <li>Days for defect discovery</li>
-                                <li>Manual quality dependency</li>
+            <div class="phase-content">
+                <div class="phase-info fade-in">
+                    <h3>Before vs. After WeldVisionIQ</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0;">
+                        <div style="background: #fee2e2; padding: 30px; border-radius: 12px; border-left: 4px solid #dc2626;">
+                            <h4 style="color: #dc2626; margin-bottom: 16px;">Traditional Inspection</h4>
+                            <ul style="list-style: none; padding: 0; color: #7f1d1d;">
+                                <li style="margin-bottom: 8px;">✗ 60-80% detection accuracy</li>
+                                <li style="margin-bottom: 8px;">✗ 5-10% inspection coverage</li>
+                                <li style="margin-bottom: 8px;">✗ Days/weeks for defect discovery</li>
+                                <li style="margin-bottom: 8px;">✗ Reactive quality approach</li>
+                                <li style="margin-bottom: 8px;">✗ $50M+ recall risks</li>
                             </ul>
                         </div>
-                        <div>
-                            <h4 style="color: var(--primary-cyan); margin-bottom: 10px;">After</h4>
-                            <ul style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
-                                <li>99.7% detection accuracy</li>
-                                <li>100% inspection coverage</li>
-                                <li>Real-time defect prevention</li>
-                                <li>AI-powered quality assurance</li>
+                        <div style="background: #d1fae5; padding: 30px; border-radius: 12px; border-left: 4px solid #059669;">
+                            <h4 style="color: #059669; margin-bottom: 16px;">WeldVisionIQ Intelligence</h4>
+                            <ul style="list-style: none; padding: 0; color: #064e3b;">
+                                <li style="margin-bottom: 8px;">✓ 99.7% detection accuracy</li>
+                                <li style="margin-bottom: 8px;">✓ 100% inspection coverage</li>
+                                <li style="margin-bottom: 8px;">✓ Real-time defect prevention</li>
+                                <li style="margin-bottom: 8px;">✓ Predictive quality assurance</li>
+                                <li style="margin-bottom: 8px;">✓ Zero recall risk exposure</li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in" style="background: white; border-radius: 16px; padding: 48px; box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200);">
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <div style="font-size: 3.5rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 8px;">$2.3M+</div>
+                        <div style="color: var(--gray-600); font-size: 1.1rem;">Annual Cost Savings</div>
+                        <div style="color: var(--gray-500); font-size: 0.9rem; margin-top: 8px;">Typical automotive manufacturing plant</div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 600; color: var(--primary-cyan); margin-bottom: 8px;">4-8x</div>
+                            <div style="color: var(--gray-600); font-size: 0.9rem;">ROI within 12 months</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 600; color: var(--primary-cyan); margin-bottom: 8px;">95%</div>
+                            <div style="color: var(--gray-600); font-size: 0.9rem;">Defect prevention rate</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 600; color: var(--primary-cyan); margin-bottom: 8px;">70%</div>
+                            <div style="color: var(--gray-600); font-size: 0.9rem;">Inspection time reduction</div>
                         </div>
                     </div>
                 </div>
@@ -1061,64 +1027,107 @@
 
     <!-- CTA Section -->
     <section id="contact" class="section cta-section">
-        <div class="cta-content fade-in">
-            <h2>Ready to Revolutionize Your Welding?</h2>
-            <p>
-                Join industry leaders who transformed from "hope and pray" to "know and control" quality. 
-                Schedule your personalized demo and see WeldVisionIQ in action.
-            </p>
-            <div class="hero-cta">
-                <button class="btn-primary" onclick="scheduleDemo()">Schedule Free Consultation</button>
-                <button class="btn-secondary" onclick="requestInfo()">Download Technical Specs</button>
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="section-title">Ready to Transform Your Manufacturing Quality?</h2>
+                <p class="section-subtitle">
+                    Join industry leaders who eliminated recall risks and achieved predictive quality control. 
+                    Schedule your personalized demonstration today.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="scheduleDemo()">Schedule Free Consultation</button>
+                    <button class="btn-secondary" onclick="requestInfo()">Download Technical Specifications</button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>WeldVisionIQ™</h3>
-                <p>Revolutionizing weld quality assurance with AI-powered real-time inspection technology.</p>
-                <p>Transform your manufacturing from reactive inspection to predictive quality control.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WeldVisionIQ™</h3>
+                    <p>Complete weld lifecycle intelligence platform transforming manufacturing quality through AI-powered inspection technology.</p>
+                    <p>From pre-weld prevention to post-weld validation - ensure every weld meets the highest standards.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Pre-Weld Solutions</h3>
+                    <a href="#pre-weld">VisionIQ™ Material Verification</a>
+                    <a href="#pre-weld">Parameter Monitor™</a>
+                    <a href="#pre-weld">Smart Setup Optimization</a>
+                    <a href="#pre-weld">Contamination Detection</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Real-Time Monitoring</h3>
+                    <a href="#realtime">ArcSound™ Acoustic Intelligence</a>
+                    <a href="#realtime">ThermoTrack™ Thermal Analysis</a>
+                    <a href="#realtime">Process Parameter Control</a>
+                    <a href="#realtime">Live Defect Detection</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Post-Weld Validation</h3>
+                    <a href="#post-weld">UT-Probe™ Ultrasonic Testing</a>
+                    <a href="#post-weld">WeldX-Ray™ Digital Radiography</a>
+                    <a href="#post-weld">Automated Compliance</a>
+                    <a href="#post-weld">Quality Documentation</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>Email: info@weldvisioniq.com</p>
+                    <p>Phone: +91-124-XXX-XXXX</p>
+                    <p>Address: Gurugram, Haryana, India</p>
+                    <a href="#contact">Schedule Demonstration</a>
+                    <a href="#">Technical Support Portal</a>
+                </div>
             </div>
             
-            <div class="footer-section">
-                <h3>Technology</h3>
-                <a href="#modules">VisionIQ™</a>
-                <a href="#modules">ArcSound™</a>
-                <a href="#modules">ThermoTrack™</a>
-                <a href="#modules">Process Monitor™</a>
-                <a href="#modules">UT-Probe™</a>
-                <a href="#modules">WeldX-Ray™</a>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WeldVisionIQ. All rights reserved. Patent-protected AI technology for manufacturing excellence.</p>
             </div>
-            
-            <div class="footer-section">
-                <h3>Industries</h3>
-                <a href="#">Automotive Manufacturing</a>
-                <a href="#">Aerospace & Defense</a>
-                <a href="#">Infrastructure & Construction</a>
-                <a href="#">Heavy Manufacturing</a>
-                <a href="#">Oil & Gas</a>
-                <a href="#">Railways & Transportation</a>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Email: info@weldvisioniq.com</p>
-                <p>Phone: +91-124-XXX-XXXX</p>
-                <p>Address: Gurugram, Haryana, India</p>
-                <a href="#contact">Schedule Demo</a>
-                <a href="#">Technical Support</a>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 WeldVisionIQ. All rights reserved. Patent-protected technology.</p>
         </div>
     </footer>
 
     <script>
+        // Testimonial Slider Functionality
+        let currentSlide = 0;
+        const totalSlides = 5;
+        
+        function showSlide(index) {
+            const slider = document.getElementById('testimonials-slider');
+            const dots = document.querySelectorAll('.dot');
+            
+            // Update slider position
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Update dots
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+        
+        function nextTestimonial() {
+            const nextIndex = (currentSlide + 1) % totalSlides;
+            showSlide(nextIndex);
+        }
+        
+        function previousTestimonial() {
+            const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prevIndex);
+        }
+        
+        function currentTestimonial(index) {
+            showSlide(index - 1);
+        }
+        
+        // Auto-advance testimonials
+        setInterval(nextTestimonial, 6000);
+        
         // Scroll animations
         function observeElements() {
             const observer = new IntersectionObserver((entries) => {
@@ -1150,48 +1159,52 @@
 
         // Demo and info request functions
         function scheduleDemo() {
-            alert('Thank you for your interest! Our team will contact you within 24 hours to schedule your personalized WeldVisionIQ™ demonstration.');
+            alert('Thank you for your interest! Our technical team will contact you within 24 hours to schedule your personalized WeldVisionIQ™ demonstration and ROI analysis.');
         }
 
         function requestInfo() {
-            alert('Technical specifications and detailed ROI analysis will be sent to your email. Please provide your contact details to our sales team.');
+            alert('Complete technical specifications, case studies, and ROI calculator will be sent to your email. Please provide your contact details to receive the comprehensive information package.');
         }
 
         // Navigation background on scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = 'var(--shadow-md)';
             } else {
-                nav.style.background = 'rgba(10, 10, 10, 0.9)';
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = 'none';
             }
         });
 
         // Initialize animations when page loads
         document.addEventListener('DOMContentLoaded', observeElements);
 
-        // Dynamic stats counter animation
+        // Stats counter animation
         function animateStats() {
             const stats = document.querySelectorAll('.stat-number');
             stats.forEach(stat => {
                 const target = stat.textContent;
+                const isPercentage = target.includes('%');
+                const isMultiplier = target.includes('x');
                 let current = 0;
-                const increment = target.includes('%') ? 1 : target.includes('B') ? 0.1 : 1;
+                const finalValue = parseFloat(target.replace(/[^\d.]/g, ''));
+                const increment = finalValue / 60; // 60 frames for smooth animation
+                
                 const interval = setInterval(() => {
                     current += increment;
-                    if (target.includes('%') && current >= parseInt(target)) {
-                        stat.textContent = target;
-                        clearInterval(interval);
-                    } else if (target.includes('B') && current >= parseFloat(target)) {
-                        stat.textContent = target;
-                        clearInterval(interval);
-                    } else if (!target.includes('%') && !target.includes('B') && current >= parseInt(target)) {
+                    if (current >= finalValue) {
                         stat.textContent = target;
                         clearInterval(interval);
                     } else {
-                        stat.textContent = target.includes('%') ? Math.floor(current) + '%' : 
-                                         target.includes('B') ? current.toFixed(1) + 'B+' : 
-                                         Math.floor(current) + '%';
+                        if (isPercentage) {
+                            stat.textContent = Math.floor(current) + '%';
+                        } else if (isMultiplier) {
+                            stat.textContent = current.toFixed(1) + 'x';
+                        } else {
+                            stat.textContent = current.toFixed(1) + (target.includes('%') ? '%' : '');
+                        }
                     }
                 }, 50);
             });
@@ -1215,4 +1228,97 @@
         });
     </script>
 </body>
-</html>
+</html><div class="module-icon">V</div>
+                        <h4 class="module-title">VisionIQ™</h4>
+                        <p class="module-description">Smart material verification and contamination detection</p>
+                        <ul class="module-benefits">
+                            <li>Detects oil, grease, rust contamination</li>
+                            <li>Wrong material grade identification</li>
+                            <li>3D fit-up analysis within ±0.5mm</li>
+                            <li>Automated PMI verification</li>
+                        </ul>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon">P</div>
+                        <h4 class="module-title">Parameter Monitor™</h4>
+                        <p class="module-description">Equipment health and consumable optimization</p>
+                        <ul class="module-benefits">
+                            <li>Worn electrode detection</li>
+                            <li>Gas flow verification</li>
+                            <li>Consumable quality analysis</li>
+                            <li>Equipment calibration status</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-Time Section -->
+    <section id="realtime" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Phase 2: Real-Time Monitoring</h2>
+                <p class="section-subtitle">Live defect detection and process correction during welding operations</p>
+            </div>
+            
+            <div class="phase-content">
+                <div class="modules-grid fade-in">
+                    <div class="module-card">
+                        <div class="module-icon">A</div>
+                        <h4 class="module-title">ArcSound™</h4>
+                        <p class="module-description">Acoustic intelligence for real-time defect detection</p>
+                        <ul class="module-benefits">
+                            <li>20,000+ samples/second analysis</li>
+                            <li>99.7% accuracy across 11 defect types</li>
+                            <li>Robotic repetition error detection</li>
+                            <li>Welder fatigue monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="module-card">
+                        <div class="module-icon">T</div>
+                        <h4 class="module-title">ThermoTrack™</h4>
+                        <p class="module-description">Advanced thermal analysis and cooling control</p>
+                        <ul class="module-benefits">
+                            <li>MWIR imaging at 2kHz frame rates</li>
+                            <li>Heat-affected zone monitoring</li>
+                            <li>Cooling rate calculation (800-500°C)</li>
+                            <li>Thermal stress prediction</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="phase-info fade-in">
+                    <h3>Catch Problems as They Happen</h3>
+                    <p class="phase-description">
+                        Traditional inspection finds defects after they're created. Our real-time monitoring prevents defects during the welding process itself, providing 2-3 second advance warning before critical failures occur.
+                    </p>
+                    <div class="roi-highlight">
+                        <div class="roi-title">Real-Time ROI Impact</div>
+                        <div class="roi-value">Prevent 95% of robotic repetition errors and eliminate surprise rework costs. Single electrode wear detection saves $50K in scrapped parts.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post-Weld Section -->
+    <section id="post-weld" class="section pre-weld">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Phase 3: Post-Weld Validation</h2>
+                <p class="section-subtitle">Smart quality confirmation with AI-driven inspection optimization</p>
+            </div>
+            
+            <div class="phase-content">
+                <div class="phase-info fade-in">
+                    <h3>From Sampling to Complete Validation</h3>
+                    <p class="phase-description">
+                        Traditional NDT inspects 5-10% of welds and hopes for the best. Our AI-driven approach provides 100% coverage with 70% reduction in inspection time, ensuring nothing gets missed.
+                    </p>
+                    <div class="roi-highlight">
+                        <div class="roi-title">Post-Weld ROI Impact</div>
+                        <div class="roi-value">Eliminate recall risks worth $50M+ while reducing inspection costs by 40%. Complete traceability for aerospace and automotive compliance.</div>
+                    </div>
+                </div>
+                <div class="modules-grid fade-in">
+                    <div class="module-card">
