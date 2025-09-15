@@ -72,6 +72,10 @@
             background-clip: text;
             font-family: 'Space Grotesk', sans-serif;
             flex-shrink: 0;
+            max-width: calc(100% - 60px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         
         .nav-links {
@@ -260,10 +264,7 @@
             
             .logo {
                 font-size: 1.4rem;
-                max-width: calc(100% - 60px);
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                max-width: calc(100% - 50px);
             }
             
             .hamburger {
@@ -272,8 +273,8 @@
             }
             
             .hamburger span {
-                width: 18px;
-                height: 2px;
+                width: 20px;
+                height: 2.5px;
             }
         }
         
@@ -284,7 +285,7 @@
             
             .logo {
                 font-size: 1.2rem;
-                max-width: calc(100% - 50px);
+                max-width: calc(100% - 40px);
             }
             
             .hamburger {
@@ -293,8 +294,8 @@
             }
             
             .hamburger span {
-                width: 16px;
-                height: 1.5px;
+                width: 18px;
+                height: 2px;
             }
         }
         
