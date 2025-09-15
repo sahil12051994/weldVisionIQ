@@ -57,7 +57,8 @@
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 16px;
+            width: 100%;
         }
         
         .logo {
@@ -68,6 +69,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-family: 'Space Grotesk', sans-serif;
+            flex-shrink: 0;
         }
         
         .nav-links {
@@ -144,6 +146,7 @@
             font-size: 0.9rem;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-md);
+            white-space: nowrap;
         }
         
         .cta-nav:hover {
@@ -156,6 +159,8 @@
             flex-direction: column;
             cursor: pointer;
             gap: 4px;
+            z-index: 1001;
+            padding: 8px;
         }
         
         .hamburger span {
@@ -220,6 +225,26 @@
             .cta-nav {
                 margin-top: 16px;
                 text-align: center;
+            }
+        }
+        
+        /* Ensure hamburger stays within bounds on small screens */
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 12px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .hamburger {
+                padding: 6px;
+            }
+            
+            .hamburger span {
+                width: 20px;
+                height: 2px;
             }
         }
         
@@ -1052,10 +1077,6 @@
         }
         
         @media (max-width: 480px) {
-            .logo {
-                font-size: 1.5rem;
-            }
-            
             .section-title {
                 font-size: 2rem;
             }
@@ -1399,11 +1420,11 @@
             <h3 class="logos-title">Trusted by Industry Leaders Worldwide</h3>
             <div class="logos-slider">
                 <div class="logos-track">
-<!--                     <div class="logo-item">Tata Motors</div> -->
-<!--                     <div class="logo-item">Mahindra Group</div> -->
-<!--                     <div class="logo-item">Larsen & Toubro</div> -->
-<!--                     <div class="logo-item">JSW Steel</div> -->
-<!--                     <div class="logo-item">Hindustan Unilever</div> -->
+                    <!-- <div class="logo-item">Tata Motors</div> -->
+                    <!-- <div class="logo-item">Mahindra Group</div> -->
+                    <!-- <div class="logo-item">Larsen & Toubro</div> -->
+                    <!-- <div class="logo-item">JSW Steel</div> -->
+                    <!-- <div class="logo-item">Hindustan Unilever</div> -->
                 </div>
             </div>
         </div>
