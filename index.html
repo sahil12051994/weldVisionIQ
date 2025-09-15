@@ -198,6 +198,7 @@
             }
             
             .dropdown {
+                display: none;
                 position: static;
                 opacity: 1;
                 visibility: visible;
@@ -206,6 +207,10 @@
                 border: none;
                 background: var(--gray-50);
                 margin-top: 8px;
+            }
+            
+            .nav-item.active .dropdown {
+                display: block;
             }
             
             .hamburger {
@@ -1606,7 +1611,7 @@
                         <div style="color: var(--gray-600); font-size: 1rem; margin-bottom: 4px;">Annual Cost Savings</div>
                         <div style="color: var(--gray-500); font-size: 0.85rem;">Typical automotive manufacturing plant (1,800 welds/day)</div>
                     </div>
-                                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
                         <div style="text-align: center; padding: 20px; background: var(--gray-50); border-radius: 12px;">
                             <div style="font-size: 1.8rem; font-weight: 600; color: var(--primary-cyan); margin-bottom: 8px;">3.2x</div>
                             <div style="color: var(--gray-600); font-size: 0.9rem;">ROI within 18 months</div>
@@ -1784,6 +1789,25 @@
         // Auto-advance testimonials
         setInterval(nextTestimonial, 7000);
         
+        // Add touch swipe support for testimonials
+        let startX = 0;
+        const sliderContainer = document.querySelector('.testimonials-container');
+        
+        if (sliderContainer) {
+            sliderContainer.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].pageX;
+            });
+            
+            sliderContainer.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].pageX;
+                if (startX - endX > 50) {
+                    nextTestimonial();
+                } else if (endX - startX > 50) {
+                    previousTestimonial();
+                }
+            });
+        }
+
         // Intersection Observer for animations
         function observeElements() {
             const observer = new IntersectionObserver((entries) => {
@@ -1893,6 +1917,28 @@
             });
         }
 
+        // Handle dropdown menus on mobile (toggle)
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (window.innerWidth <= 1024) {
+                    const dropdown = this.querySelector('.dropdown');
+                    if (dropdown) {
+                        e.preventDefault();
+                        this.classList.toggle('active');
+                        if (this.classList.contains('active')) {
+                            dropdown.style.display = 'block';
+                            dropdown.style.position = 'static';
+                            dropdown.style.opacity = '1';
+                            dropdown.style.visibility = 'visible';
+                            dropdown.style.transform = 'none';
+                        } else {
+                            dropdown.style.display = 'none';
+                        }
+                    }
+                }
+            });
+        });
+
         // Initialize animations and stats
         document.addEventListener('DOMContentLoaded', () => {
             observeElements();
@@ -1911,22 +1957,6 @@
             if (heroSection) {
                 heroObserver.observe(heroSection);
             }
-        });
-
-        // Handle dropdown menus on mobile
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                if (window.innerWidth <= 1024) {
-                    const dropdown = this.querySelector('.dropdown');
-                    if (dropdown) {
-                        e.preventDefault();
-                        dropdown.style.position = 'static';
-                        dropdown.style.opacity = '1';
-                        dropdown.style.visibility = 'visible';
-                        dropdown.style.transform = 'none';
-                    }
-                }
-            });
         });
 
         // Pause logo animation on hover
